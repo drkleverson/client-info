@@ -1,6 +1,5 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 import DeviceDetector from "device-detector-js";
-import si from "systeminformation";
 
 module.exports = async (req: VercelRequest, res: VercelResponse) => {
   const response = await fetch(
@@ -8,7 +7,6 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
   );
 
   const responseData = await response.json();
-  const cpuInfo = await si.cpu();
   const deviceDevice = new DeviceDetector();
   const device = deviceDevice.parse(req.headers["user-agent"]);
 
@@ -16,7 +14,6 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
     ip: req.headers["x-real-ip"] || "",
     result: responseData,
     device,
-    cpuInfo,
   };
 
   res.status(200).json(data);
