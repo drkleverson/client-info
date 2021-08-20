@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "device-detector-js": "^2.2.10",
     "express": "^4.17.1",
     "next": "^11.1.0",
     "react": "^17.0.2",
