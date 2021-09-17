@@ -7,7 +7,6 @@ module.exports = async (req: VercelRequest, res: VercelResponse) => {
   console.log(
     req.headers["user-agent"],
     req.headers["x-real-ip"],
-    req.headers.forwarded
   );
   const image = new PNG({ width: 1, height: 1 });
   res.setHeader("Content-Type", "image/png");
