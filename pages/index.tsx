@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+export default function Home({ device,result,headers }) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -25,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
       <p>
         sistema operacional: {device.os.name} {device.os.version}
       </p>
+      <p>{JSON.stringify(headers) }</p>
     </div>
   );
 }
@@ -41,7 +43,8 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   return {
     props: {
       device,
-      result
+      result,
+      headers: context.req.headers,
     },
   };
 };
