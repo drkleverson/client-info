@@ -2,10 +2,16 @@ import Head from "next/head";
 import DeviceDetector from "device-detector-js";
 import { GetServerSideProps } from "next";
 
+import { makeStyles } from "@material-ui/core/styles";
+const useStyles = makeStyles((theme) => ({
+  root: {
+    fontFamily:"Roboto"
+  },
+}));
 
-export default function Home({ device,result }) {
+  const classes = useStyles();
   return (
-    <div className="">
+    <div className={classes.root}>
       <Head>
         <title>Meu dispositivo</title>
       </Head>
