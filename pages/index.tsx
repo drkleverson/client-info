@@ -11,48 +11,56 @@ import { FaNetworkWired, FaMapMarkerAlt } from "react-icons/fa";
 const useStyles = makeStyles((theme) => ({
   root: {
     fontFamily: "Roboto",
+    background: "linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%)",
+    margin: 0,
   },
   icon: {
     marginRight: 5,
-  }
+  },
 }));
 
 export default function Home({ device, result }) {
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <body className={classes.root}>
       <Head>
         <title>Meu dispositivo</title>
       </Head>
-      <Grid container justify="center">
-        <Card>
-          <CardContent>
-            <Box mb={1} alignItems="center" display="flex" flexWrap="wrap">
-              <GiEarthAmerica className={classes.icon} />
-              <Typography>
-                <b>{result.query}</b>
-              </Typography>
-            </Box>
-            <Box mb={1} alignItems="center" display="flex" flexWrap="wrap">
-              <FaNetworkWired className={classes.icon} />
-              <Typography>{result.isp}</Typography>
-            </Box>
-            <Box mb={1} alignItems="center" display="flex" flexWrap="wrap">
-              <FaMapMarkerAlt className={classes.icon} />
-              <Typography>
-                {result.city}, {result.regionName}, {result.country}
-              </Typography>
-            </Box>
-            <Box alignItems="center" display="flex" flexWrap="wrap">
-              <MdDevices className={classes.icon} />
-              <Typography>
-                {device.os.name} {device.os.version}
-              </Typography>
-            </Box>
-          </CardContent>
-        </Card>
+      <Grid
+        container
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Box mt={5}>
+          <Card>
+            <CardContent>
+              <Box mb={1} alignItems="center" display="flex" flexWrap="wrap">
+                <GiEarthAmerica className={classes.icon} />
+                <Typography>
+                  <b>{result.query}</b>
+                </Typography>
+              </Box>
+              <Box mb={1} alignItems="center" display="flex" flexWrap="wrap">
+                <FaNetworkWired className={classes.icon} />
+                <Typography>{result.isp}</Typography>
+              </Box>
+              <Box mb={1} alignItems="center" display="flex" flexWrap="wrap">
+                <FaMapMarkerAlt className={classes.icon} />
+                <Typography>
+                  {result.city}, {result.regionName}, {result.country}
+                </Typography>
+              </Box>
+              <Box alignItems="center" display="flex" flexWrap="wrap">
+                <MdDevices className={classes.icon} />
+                <Typography>
+                  {device.os.name} {device.os.version}
+                </Typography>
+              </Box>
+            </CardContent>
+          </Card>
+        </Box>
       </Grid>
-    </div>
+    </body>
   );
 }
 
