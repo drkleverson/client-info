@@ -8,14 +8,16 @@ const useStyles = makeStyles((theme) => ({
     fontFamily:"Roboto"
   },
 }));
-
+export default function Home({ device, result }) {
   const classes = useStyles();
   return (
     <div className={classes.root}>
       <Head>
         <title>Meu dispositivo</title>
       </Head>
-      <p>ip: <b>{result.query}</b></p>
+      <p>
+        ip: <b>{result.query}</b>
+      </p>
       <p>provedor: {result.isp}</p>
       <p>organização: {result.org}</p>
       <p>sistema autônomo: {result.as}</p>
