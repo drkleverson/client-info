@@ -11,7 +11,8 @@ import { FaNetworkWired, FaMapMarkerAlt } from "react-icons/fa";
 const useStyles = makeStyles((theme) => ({
   root: {
     fontFamily: "Roboto",
-    background: "linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%)",
+    background: "linear-gradient(360deg, #00C9FF 0%, #92FE9D 100%)",
+    minHeight:"100vh",
     margin: 0,
   },
   icon: {
@@ -24,14 +25,10 @@ export default function Home({ device, result }) {
   return (
     <body className={classes.root}>
       <Head>
-        <meta name="theme-color" content="currentColor"/>
+        <meta name="theme-color" content="#92FE9D" />
         <title>Meu dispositivo</title>
       </Head>
-      <Grid
-        container
-        alignItems="center"
-        justifyContent="center"
-      >
+      <Grid container alignItems="center" justifyContent="center">
         <Box mt={5}>
           <Card>
             <CardContent>
