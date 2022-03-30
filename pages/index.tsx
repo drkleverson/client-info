@@ -25,7 +25,7 @@ export default function Home({ device, result }) {
   return (
     <body className={classes.root}>
       <Head>
-        <meta name="theme-color" content="#92FE9D" />
+        <meta name="theme-color" content="transparent" />
         <title>Meu dispositivo</title>
       </Head>
       <Grid container alignItems="center" justifyContent="center">
