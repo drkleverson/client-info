@@ -51,7 +51,7 @@ export default function Home({ device, result }) {
               <Box alignItems="center" display="flex" flexWrap="wrap">
                 <MdDevices className={classes.icon} />
                 <Typography>
-                  {device.os.name} {device.os.version}
+                  {device.os?.name} {device.os?.version}
                 </Typography>
               </Box>
             </CardContent>
